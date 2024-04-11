@@ -118,10 +118,14 @@ La unica forma de acceder a los elementos de la pila es a travez de su tope, por
 Al igual que la pila es un conjunto de elementos no ordenados, se utiliza para agrupar elementos y en particular se utiliza para agrupar elementos que tienen una politica de salida llamada **FIFO** "Fist In, Fist Out", que significa que el pimero que entra es el pimero que sale. Se insertan elementos por un lado y se sacan por el contrario.
 
 ### Algunas Operaciones
+- **Crear**: La operación de crear se refiere a la inicialización de una nueva cola vacía. En este paso, se asignan los recursos necesarios para almacenar los elementos de la cola y se establecen las estructuras de datos necesarias para su funcionamiento.
 
-- **Crear**: Esta operación se utiliza para inicializar una nueva cola vacía.
-- **Destruir**: Esta operación se utiliza para liberar todos los recursos asignados a la cola y eliminarla de la memoria.
-- **Encolar (Enqueue)**: Agrega un nuevo elemento al final de la cola.
-- **Desencolar (Dequeue)**: Elimina y devuelve el elemento que se encuentra en la parte frontal de la cola.
-- **Primero (Front)**: Devuelve el elemento que se encuentra en la parte frontal de la cola sin eliminarlo.
-- **Vacío (Empty)**: Verifica si la cola está vacía o no.
+- **Destruir**: La operación de destruir se encarga de liberar todos los recursos asignados a la cola y eliminarla por completo de la memoria. Esto se realiza para evitar fugas de memoria y liberar espacio una vez que la cola ya no se necesita.
+
+- **Encolar (Enqueue)**: Esta operación consiste en agregar un nuevo elemento al final de la cola. El nuevo elemento se inserta después de todos los elementos existentes en la cola y se convierte en el último en ser eliminado (siguiendo el principio FIFO, "First In, First Out").
+
+- **Desencolar (Dequeue)**: La operación de desencolar se refiere a eliminar y devolver el elemento que se encuentra en la parte frontal de la cola. Esto implica extraer el elemento más antiguo que aún no ha sido eliminado de la cola, siguiendo el principio FIFO.
+
+- **Primero (Front)**: Esta operación devuelve el elemento que se encuentra en la parte frontal de la cola sin eliminarlo. Es decir, devuelve el primer elemento que se insertó en la cola y que aún no ha sido eliminado.
+
+- **Vacío (Empty)**: La operación de vacío se utiliza para verificar si la cola está vacía o no. Devuelve verdadero si la cola no contiene ningún elemento y falso si la cola contiene al menos un elemento.
