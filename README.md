@@ -113,3 +113,15 @@ La unica forma de acceder a los elementos de la pila es a travez de su tope, por
     <img width="300px" src="imagenes/PILA_NODO.PNG">
 </p>
 
+## Cola/Queue
+
+Al igual que la pila es un conjunto de elementos no ordenados, se utiliza para agrupar elementos y en particular se utiliza para agrupar elementos que tienen una politica de salida llamada **FIFO** "Fist In, Fist Out", que significa que el pimero que entra es el pimero que sale. Se insertan elementos por un lado y se sacan por el contrario.
+
+### Algunas Operaciones
+
+- **Crear**: Esta operación se utiliza para inicializar una nueva cola vacía.
+- **Destruir**: Esta operación se utiliza para liberar todos los recursos asignados a la cola y eliminarla de la memoria.
+- **Encolar (Enqueue)**: Agrega un nuevo elemento al final de la cola.
+- **Desencolar (Dequeue)**: Elimina y devuelve el elemento que se encuentra en la parte frontal de la cola.
+- **Primero (Front)**: Devuelve el elemento que se encuentra en la parte frontal de la cola sin eliminarlo.
+- **Vacío (Empty)**: Verifica si la cola está vacía o no.
