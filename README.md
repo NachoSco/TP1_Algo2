@@ -89,7 +89,10 @@ La unica forma de acceder a los elementos de la pila es a travez de su tope, por
 - **Is Full (Está llena)**: En algunas implementaciones de pilas, especialmente cuando se utilizan arreglos de tamaño fijo para almacenar los elementos, puede ser útil tener una operación para verificar si la pila está llena y no se puede agregar más elementos.
 
 
-!https://github.com/NachoSco/TP1_Algo2/blob/main/Captura%20Pila.PNG
+<div align="right">
+    <img width="100px" src="PILA.PNG">
+</div>
+
 
 
 
