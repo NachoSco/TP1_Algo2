@@ -62,7 +62,7 @@ vector_original = vector;
 
 ## Respuestas a las preguntas teóricas
 
-- ¿Qué es una lista/pila/cola? Explicar con diagramas.
+##¿Qué es una lista/pila/cola?
 
 ## Pila/Stack
 
