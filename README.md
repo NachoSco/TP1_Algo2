@@ -90,7 +90,7 @@ La unica forma de acceder a los elementos de la pila es a travez de su tope, por
 
 
 <div style="text-align: center;">
-    <img style="display: inline-block;" width="550px" src="mi_imagen.png">
+    <img style="display: inline-block;" width="550px" src="PILA.PNG">
 </div>
 
 
