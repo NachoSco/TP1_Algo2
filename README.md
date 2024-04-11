@@ -90,13 +90,26 @@ La unica forma de acceder a los elementos de la pila es a travez de su tope, por
 
 
 <p align="center">
-    <img width="550px" src="PILA.PNG">
+    <img width="550px" src="imagenes/PILA.PNG">
 </p>
 
+### Implementaciones 
 
+- **Vector estático**
 
+<p align="center">
+    <img width="500px" src="imagenes/VEC_EST.PNG">
+</p>
 
+- **Vector dinámico**
 
+<p align="center">
+    <img width="500px" src="imagenes/VEC_DIM.PNG">
+</p>
 
+- **Pila como lista de nodos**
 
+<p align="center">
+    <img width="500px" src="imagenes/PILA_NODO.PNG">
+</p>
 
