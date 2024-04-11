@@ -122,7 +122,7 @@ Al igual que la pila es un conjunto de elementos no ordenados, se utiliza para a
 
 - **Destruir**: La operación de destruir se encarga de liberar todos los recursos asignados a la cola y eliminarla por completo de la memoria. Esto se realiza para evitar fugas de memoria y liberar espacio una vez que la cola ya no se necesita.
 
-- **Encolar (Enqueue)**: Esta operación consiste en agregar un nuevo elemento al final de la cola. El nuevo elemento se inserta después de todos los elementos existentes en la cola y se convierte en el último en ser eliminado (siguiendo el principio FIFO, "First In, First Out").
+- **Encolar (Enqueue)**: Esta operación consiste en agregar un nuevo elemento al final de la cola. El nuevo elemento se inserta después de todos los elementos existentes en la cola y se convierte en el último en ser eliminado siguiendo el principio FIFO.
 
 - **Desencolar (Dequeue)**: La operación de desencolar se refiere a eliminar y devolver el elemento que se encuentra en la parte frontal de la cola. Esto implica extraer el elemento más antiguo que aún no ha sido eliminado de la cola, siguiendo el principio FIFO.
 
