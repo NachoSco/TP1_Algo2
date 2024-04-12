@@ -204,6 +204,6 @@ Lista es una estructura de datos que organiza elementos en una secuencia, donde 
     
   - Circular
   <p align="center">
-    <img width="300px" src="imagenes/LIST_CIR.PNG">
+    <img width="450px" src="imagenes/LIST_CIR.PNG">
 </p>
 
