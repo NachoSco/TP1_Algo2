@@ -139,7 +139,7 @@ Al igual que la pila es un conjunto de elementos no ordenados, se utiliza para a
 - **Vector estático**
 
 <p align="center">
-    <img width="300px" src="imagenes/VEC_EST_COL.png">
+    <img width="150px" src="imagenes/VEC_EST_COL.png">
 </p>
 
 - **Vector dinámico**
