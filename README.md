@@ -177,7 +177,31 @@ Lista es una estructura de datos que organiza elementos en una secuencia, donde 
 - **Ordenar (Sort):** Ordena los elementos de la lista según un criterio específico (por ejemplo, orden numérico o alfabético).
   
 - **Invertir (Reverse):** Invierte el orden de los elementos en la lista.
-- 
+  
 <p align="center">
     <img width="650px" src="imagenes/TDA_LISTA.PNG">
 </p>
+
+### Implementaciones 
+
+- **Vector estático**
+
+<p align="center">
+    <img width="300px" src="imagenes/VEC_EST.PNG">
+</p>
+
+- **Vector dinámico**
+
+<p align="center">
+    <img width="300px" src="imagenes/VEC_DIM.PNG">
+</p>
+
+- **Lista de Nodos**
+  
+  - Simplemente enlazada
+    
+  - Doblemente enlazada
+    
+  - Circular
+  
+  
