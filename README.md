@@ -4,8 +4,6 @@
 
 # TDA LISTA
 
-# ESTO ES UN TEMPLATE, COMPLETAR LO QUE HAGA FALTA, ELIMINAR LO QUE SOBRE (INCLUIDA ESTA LÍNEA)
-
 ## Alumno: (Nombre Apellido) - (Padrón) - (Mail)
 
 - Para compilar:
@@ -153,3 +151,20 @@ Al igual que la pila es un conjunto de elementos no ordenados, se utiliza para a
 <p align="center">
     <img width="300px" src="imagenes/PILA_NODO.PNG">
 </p>
+
+## Lista/List
+
+Lista es una estructura de datos que organiza elementos en una secuencia, donde cada elemento, excepto el primero, tiene un predecesor, y cada elemento, excepto el último, tiene un sucesor. A diferencia de estructuras como pilas (**LIFO**) y colas (**FIFO**), en una lista se puede acceder a cualquier elemento de forma directa. Esto la hace versátil para diversas operaciones como inserción, eliminación, búsqueda y modificación de elementos.
+
+### Algunas Operaciones
+
+- **Crear (Create):** Inicializa una lista vacía, lista para almacenar elementos.
+- **Insertar (InsertAT):** Agrega un nuevo elemento a la lista en una posición específica.
+- **Eliminar (DeleteAT):** Elimina un elemento de la lista en una posición específica.
+- **Buscar (Search):** Busca un elemento específico en la lista y devuelve su posición si se encuentra.
+- **Tamaño (Size):** Devuelve la cantidad de elementos presentes en la lista.
+- **Acceder (Access):** Devuelve el elemento en una posición específica de la lista.
+- **Actualizar (Update):** Modifica el valor de un elemento en una posición específica de la lista.
+- **Concatenar (Concatenate):** Combina dos listas en una sola lista.
+- **Ordenar (Sort):** Ordena los elementos de la lista según un criterio específico (por ejemplo, orden numérico o alfabético).
+- **Invertir (Reverse):** Invierte el orden de los elementos en la lista.
