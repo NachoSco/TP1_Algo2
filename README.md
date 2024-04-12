@@ -133,3 +133,23 @@ Al igual que la pila es un conjunto de elementos no ordenados, se utiliza para a
 <p align="center">
     <img width="550px" src="imagenes/TDA_COLA.png">
 </p>
+
+### Implementaciones 
+
+- **Vector estático**
+
+<p align="center">
+    <img width="300px" src="imagenes/VEC_EST.PNG">
+</p>
+
+- **Vector dinámico**
+
+<p align="center">
+    <img width="300px" src="imagenes/VEC_DIM.PNG">
+</p>
+
+- **Pila como lista de nodos**
+
+<p align="center">
+    <img width="300px" src="imagenes/PILA_NODO.PNG">
+</p>
