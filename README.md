@@ -159,12 +159,21 @@ Lista es una estructura de datos que organiza elementos en una secuencia, donde 
 ### Algunas Operaciones
 
 - **Crear (Create):** Inicializa una lista vacía, lista para almacenar elementos.
+  
 - **Insertar (InsertAT):** Agrega un nuevo elemento a la lista en una posición específica.
+  
 - **Eliminar (DeleteAT):** Elimina un elemento de la lista en una posición específica.
+  
 - **Buscar (Search):** Busca un elemento específico en la lista y devuelve su posición si se encuentra.
+  
 - **Tamaño (Size):** Devuelve la cantidad de elementos presentes en la lista.
+  
 - **Acceder (Access):** Devuelve el elemento en una posición específica de la lista.
+  
 - **Actualizar (Update):** Modifica el valor de un elemento en una posición específica de la lista.
+  
 - **Concatenar (Concatenate):** Combina dos listas en una sola lista.
+  
 - **Ordenar (Sort):** Ordena los elementos de la lista según un criterio específico (por ejemplo, orden numérico o alfabético).
+  
 - **Invertir (Reverse):** Invierte el orden de los elementos en la lista.
