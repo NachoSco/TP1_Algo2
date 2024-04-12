@@ -129,3 +129,7 @@ Al igual que la pila es un conjunto de elementos no ordenados, se utiliza para a
 - **Primero (Front)**: Esta operación devuelve el elemento que se encuentra en la parte frontal de la cola sin eliminarlo. Es decir, devuelve el primer elemento que se insertó en la cola y que aún no ha sido eliminado.
 
 - **Vacío (Empty)**: La operación de vacío se utiliza para verificar si la cola está vacía o no. Devuelve verdadero si la cola no contiene ningún elemento y falso si la cola contiene al menos un elemento.
+
+<p align="center">
+    <img width="550px" src="imagenes/TDA_COLA.png">
+</p>
