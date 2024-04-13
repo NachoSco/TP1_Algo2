@@ -179,7 +179,7 @@ Lista es una estructura de datos que organiza elementos en una secuencia, donde 
 - **Invertir (Reverse):** Invierte el orden de los elementos en la lista.
   
 <p align="center">
-    <img width="650px" src="imagenes/TDA_LISTA.PNG">
+    <img width="750px" src="imagenes/TDA_LISTA.PNG">
 </p>
 
 ### Implementaciones 
