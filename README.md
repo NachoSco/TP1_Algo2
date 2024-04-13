@@ -200,13 +200,13 @@ Lista es una estructura de datos que organiza elementos en una secuencia, donde 
   
   - Simplemente enlazada
     <p align="center">
-    <img width="300px" src="imagenes/LIST_SIMPLE.PNG">
+    <img width="400px" src="imagenes/LIST_SIMPLE.PNG">
     </p>
     
   - Doblemente enlazada
     
     <p align="center">
-    <img width="300px" src="imagenes/LIST_DOBLE.PNG">
+    <img width="400px" src="imagenes/LIST_DOBLE.PNG">
     </p>
     
   - Circular
