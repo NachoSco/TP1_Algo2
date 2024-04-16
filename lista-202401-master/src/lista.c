@@ -110,36 +110,38 @@ lista_t *lista_insertar_en_posicion(lista_t *lista, void *elemento, size_t posic
     return lista;
 }
 
-void *lista_quitar(lista_t *lista)
-{
-	if(lista == NULL) {
-        return NULL; // La lista no existe, devuelve NULL
+void *lista_quitar(lista_t *lista) {
+    if (lista == NULL || lista->nodo_inicio == NULL) {
+        return NULL; // La lista está vacía o no existe, devuelve NULL
     }
-    //Si tiene un solo nodo, lo elimino
-    if(lista->nodo_inicio->siguiente == NULL){
-    	void* elemento_eliminado = lista->nodo_inicio->elemento;
-    	free(lista->nodo_inicio);
-    	lista->nodo_inicio = NULL;
 
-    	return elemento_eliminado;
+    // Si tiene un solo nodo, lo eliminamos
+    if (lista->nodo_inicio->siguiente == NULL) {
+        void* elemento_eliminado = lista->nodo_inicio->elemento;
+        free(lista->nodo_inicio);
+        lista->nodo_inicio = NULL;
+        lista->longitud = 0;
+
+        return elemento_eliminado;
     }
 
     nodo_t* actual = lista->nodo_inicio;
     nodo_t* anteultimo = NULL;
 
-    while(actual->siguiente != NULL){
-    	anteultimo = actual;
-    	actual = actual->siguiente;
-
+    while (actual->siguiente != NULL) {
+        anteultimo = actual;
+        actual = actual->siguiente;
     }
 
     void* elemento_eliminado = actual->elemento;
-
     free(actual);
+    
+    // Actualizamos el puntero al último nodo
     anteultimo->siguiente = NULL;
 
-    return elemento_eliminado;
+    lista->longitud--;
 
+    return elemento_eliminado;
 }
 
 void *lista_quitar_de_posicion(lista_t *lista, size_t posicion)
