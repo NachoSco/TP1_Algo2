@@ -10,6 +10,7 @@ typedef struct nodo {
 struct lista {
 	nodo_t *nodo_inicio;
 	size_t longitud;
+	nodo_t *nodo_final;
 };
 
 struct lista_iterador {
@@ -31,12 +32,13 @@ nodo_t *crear_nodo(void *elemento){
 
 lista_t *lista_crear(){
 
-	lista_t *lista = malloc(sizeof(lista_t));
+	lista_t *lista = malloc(sizeof(*lista));
 	if (lista == NULL){
 		return NULL;
 	}
 	lista->nodo_inicio = NULL;
 	lista->longitud = 0;
+	lista->nodo_final = NULL;
 
 	return lista;
 }
@@ -44,35 +46,37 @@ lista_t *lista_crear(){
 
 lista_t *lista_insertar(lista_t *lista, void *elemento)
 {
-    if (lista == NULL) {
+    if (lista == NULL || elemento == NULL) {
         return NULL; // La lista no existe, devuelve NULL
     }
 
+
     nodo_t *nodo_nuevo = crear_nodo(elemento);
+
     if (nodo_nuevo == NULL) {
         return NULL; // Error al crear el nuevo nodo, devuelve NULL
     }
 
     if (lista->longitud == 0) {
-        // La lista está vacía, el nuevo nodo será el primer nodo
         lista->nodo_inicio = nodo_nuevo;
+        lista->nodo_final = nodo_nuevo;
     } else {
-        // La lista ya contiene elementos, hay que encontrar el último nodo
-        nodo_t *actual = lista->nodo_inicio;
-        while (actual->siguiente != NULL) {
-            actual = actual->siguiente;
-        }
-        // Enlaza el nuevo nodo al final de la lista
-        actual->siguiente = nodo_nuevo;
+    	lista->nodo_final->siguiente = nodo_nuevo;
+    	lista->nodo_final = nodo_nuevo;
     }
 
     lista->longitud++;
     return lista;
 }
 
-lista_t *lista_insertar_en_posicion(lista_t *lista, void *elemento, size_t posicion) {
-    if (lista == NULL) {
-        return NULL; // La lista no existe, devuelve NULL
+lista_t *lista_insertar_en_posicion(lista_t *lista, void *elemento, size_t posicion) 
+{
+    if (lista == NULL || elemento == NULL) {
+        return NULL; // La lista no existe o el elemento es NULL, devuelve NULL
+    }
+
+    if (posicion > lista->longitud) {
+        return lista_insertar(lista, elemento); // Si la posición está más allá de la longitud actual, simplemente inserta al final
     }
 
     nodo_t *nodo_nuevo = crear_nodo(elemento);
@@ -80,58 +84,42 @@ lista_t *lista_insertar_en_posicion(lista_t *lista, void *elemento, size_t posic
         return NULL; // Error al crear el nuevo nodo, devuelve NULL
     }
 
-    if (posicion == 0 || lista->nodo_inicio == NULL) {
-        // Insertar al principio de la lista o lista vacía
+    if (posicion == 0) {
         nodo_nuevo->siguiente = lista->nodo_inicio;
         lista->nodo_inicio = nodo_nuevo;
-    } else {
-        nodo_t *anterior = lista->nodo_inicio;
-        size_t i = 0;
-        // Buscar el nodo en la posición anterior a la posición deseada
-        while (i < posicion - 1 && anterior->siguiente != NULL) {
-            anterior = anterior->siguiente;
-            i++;
+        if (lista->longitud == 0) {
+            lista->nodo_final = nodo_nuevo; // Si la lista estaba vacía, el nuevo nodo también es el último
         }
-        // Insertar en la posición deseada
-        nodo_nuevo->siguiente = anterior->siguiente;
-        anterior->siguiente = nodo_nuevo;
+    } else {
+        nodo_t *nodo_actual = lista->nodo_inicio;
+        size_t contador = 1; 
+
+        while (contador < posicion) {
+            nodo_actual = nodo_actual->siguiente;
+            contador++;
+        }
+
+        nodo_nuevo->siguiente = nodo_actual->siguiente;
+        nodo_actual->siguiente = nodo_nuevo;
+
+        if (posicion == lista->longitud) {
+            lista->nodo_final = nodo_nuevo;
+        }
     }
 
     lista->longitud++;
     return lista;
 }
 
-void *lista_quitar(lista_t *lista) {
-    if (lista == NULL || lista->nodo_inicio == NULL) {
-        return NULL; // La lista está vacía o no existe, devuelve NULL
-    }
-
-    nodo_t* actual = lista->nodo_inicio;
-    nodo_t* anteultimo = NULL;
-
-    while (actual->siguiente != NULL) {
-        anteultimo = actual;
-        actual = actual->siguiente;
-    }
-
-    void* elemento_eliminado = actual->elemento;
-    free(actual);
-    
-    if (anteultimo != NULL) {
-        // Actualizamos el puntero al último nodo
-        anteultimo->siguiente = NULL;
-    } else {
-        // La lista solo tenía un elemento
-        lista->nodo_inicio = NULL;
-    }
-
-    lista->longitud--;
-
-    return elemento_eliminado;
+void *lista_quitar(lista_t *lista) 
+{
+	
+	return NULL;
 }
 
 void *lista_quitar_de_posicion(lista_t *lista, size_t posicion)
 {
+
 	return NULL;
 }
 
