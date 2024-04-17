@@ -7,11 +7,11 @@ typedef struct nodo {
 	struct nodo *siguiente;
 } nodo_t;
 
-struct lista {
+typedef struct lista {
 	nodo_t *nodo_inicio;
 	size_t longitud;
 	nodo_t *nodo_final;
-};
+} lista_t;
 
 struct lista_iterador {
 	//y acá?
@@ -32,7 +32,7 @@ nodo_t *crear_nodo(void *elemento)
 
 lista_t *lista_crear()
 {
-	lista_t *lista = malloc(sizeof(*lista));
+	lista_t *lista = malloc(sizeof(lista_t));
 	if (lista == NULL) {
 		return NULL;
 	}
@@ -75,9 +75,7 @@ lista_t *lista_insertar_en_posicion(lista_t *lista, void *elemento,
 	}
 
 	if (posicion > lista->longitud) {
-		return lista_insertar(
-			lista,
-			elemento); // Si la posición está más allá de la longitud actual, simplemente inserta al final
+		return lista_insertar(lista,elemento); // Si la posición está más allá de la longitud actual, simplemente inserta al final
 	}
 
 	nodo_t *nodo_nuevo = crear_nodo(elemento);
@@ -106,6 +104,7 @@ lista_t *lista_insertar_en_posicion(lista_t *lista, void *elemento,
 	}
 
 	lista->longitud++;
+	printf("tamaño de la lista:%zu\n", lista->longitud);
 	return lista;
 }
 
