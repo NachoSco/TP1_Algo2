@@ -104,7 +104,6 @@ lista_t *lista_insertar_en_posicion(lista_t *lista, void *elemento,
 	}
 
 	lista->longitud++;
-	printf("tamaño de la lista:%zu\n", lista->longitud);
 	return lista;
 }
 
