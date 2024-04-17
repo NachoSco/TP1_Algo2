@@ -18,10 +18,10 @@ struct lista_iterador {
 	int sarasa;
 };
 
-nodo_t *crear_nodo(void *elemento){
-
-	nodo_t* Nodo_nuevo = malloc(sizeof(nodo_t));
-	if (Nodo_nuevo == NULL){
+nodo_t *crear_nodo(void *elemento)
+{
+	nodo_t *Nodo_nuevo = malloc(sizeof(nodo_t));
+	if (Nodo_nuevo == NULL) {
 		return NULL;
 	}
 	Nodo_nuevo->elemento = elemento;
@@ -30,10 +30,10 @@ nodo_t *crear_nodo(void *elemento){
 	return Nodo_nuevo;
 }
 
-lista_t *lista_crear(){
-
+lista_t *lista_crear()
+{
 	lista_t *lista = malloc(sizeof(*lista));
-	if (lista == NULL){
+	if (lista == NULL) {
 		return NULL;
 	}
 	lista->nodo_inicio = NULL;
@@ -45,74 +45,77 @@ lista_t *lista_crear(){
 
 lista_t *lista_insertar(lista_t *lista, void *elemento)
 {
-    if (lista == NULL || elemento == NULL) {
-        return NULL; // La lista no existe o el elemento es NULL, devuelve NULL
-    }
+	if (lista == NULL || elemento == NULL) {
+		return NULL; // La lista no existe o el elemento es NULL, devuelve NULL
+	}
 
-    nodo_t *nodo_nuevo = crear_nodo(elemento);
+	nodo_t *nodo_nuevo = crear_nodo(elemento);
 
-    if (nodo_nuevo == NULL) {
-        return NULL; // Error al crear el nuevo nodo, devuelve NULL
-    }
+	if (nodo_nuevo == NULL) {
+		return NULL; // Error al crear el nuevo nodo, devuelve NULL
+	}
 
-    if (lista->nodo_inicio == NULL) {
-        lista->nodo_inicio = nodo_nuevo;
-        lista->nodo_final = nodo_nuevo;
-    } else {
-        lista->nodo_final->siguiente = nodo_nuevo;
-        lista->nodo_final = nodo_nuevo;
-    }
+	if (lista->nodo_inicio == NULL) {
+		lista->nodo_inicio = nodo_nuevo;
+		lista->nodo_final = nodo_nuevo;
+	} else {
+		lista->nodo_final->siguiente = nodo_nuevo;
+		lista->nodo_final = nodo_nuevo;
+	}
 
-    lista->longitud++;
-    return lista;
+	lista->longitud++;
+	return lista;
 }
 
-lista_t *lista_insertar_en_posicion(lista_t *lista, void *elemento, size_t posicion) 
+lista_t *lista_insertar_en_posicion(lista_t *lista, void *elemento,
+				    size_t posicion)
 {
-    if (lista == NULL || elemento == NULL) {
-        return NULL; // La lista no existe o el elemento es NULL, devuelve NULL
-    }
+	if (lista == NULL || elemento == NULL) {
+		return NULL; // La lista no existe o el elemento es NULL, devuelve NULL
+	}
 
-    if (posicion > lista->longitud) {
-        return lista_insertar(lista, elemento); // Si la posición está más allá de la longitud actual, simplemente inserta al final
-    }
+	if (posicion > lista->longitud) {
+		return lista_insertar(
+			lista,
+			elemento); // Si la posición está más allá de la longitud actual, simplemente inserta al final
+	}
 
-    nodo_t *nodo_nuevo = crear_nodo(elemento);
-    if (nodo_nuevo == NULL) {
-        return NULL; // Error al crear el nuevo nodo, devuelve NULL
-    }
+	nodo_t *nodo_nuevo = crear_nodo(elemento);
+	if (nodo_nuevo == NULL) {
+		return NULL; // Error al crear el nuevo nodo, devuelve NULL
+	}
 
-    if (posicion == 0) {
-        nodo_nuevo->siguiente = lista->nodo_inicio;
-        lista->nodo_inicio = nodo_nuevo;
-        if (lista->longitud == 0) {
-            lista->nodo_final = nodo_nuevo; // Si la lista estaba vacía, el nuevo nodo también es el último
-        }
-    } else {
-        nodo_t *nodo_actual = lista->nodo_inicio;
-        size_t contador = 1; 
+	if (posicion == 0) {
+		nodo_nuevo->siguiente = lista->nodo_inicio;
+		lista->nodo_inicio = nodo_nuevo;
+		if (lista->longitud == 0) {
+			lista->nodo_final =
+				nodo_nuevo; // Si la lista estaba vacía, el nuevo nodo también es el último
+		}
+	} else {
+		nodo_t *nodo_actual = lista->nodo_inicio;
+		size_t contador = 1;
 
-        while (contador < posicion) {
-            nodo_actual = nodo_actual->siguiente;
-            contador++;
-        }
+		while (contador < posicion) {
+			nodo_actual = nodo_actual->siguiente;
+			contador++;
+		}
 
-        nodo_nuevo->siguiente = nodo_actual->siguiente;
-        nodo_actual->siguiente = nodo_nuevo;
-    }
+		nodo_nuevo->siguiente = nodo_actual->siguiente;
+		nodo_actual->siguiente = nodo_nuevo;
+	}
 
-    lista->longitud++;
-    return lista;
+	lista->longitud++;
+	return lista;
 }
-void *lista_quitar(lista_t *lista) 
+
+void *lista_quitar(lista_t *lista)
 {
-	
 	return NULL;
 }
 
 void *lista_quitar_de_posicion(lista_t *lista, size_t posicion)
 {
-
 	return NULL;
 }
 
