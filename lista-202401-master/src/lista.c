@@ -99,16 +99,11 @@ lista_t *lista_insertar_en_posicion(lista_t *lista, void *elemento, size_t posic
 
         nodo_nuevo->siguiente = nodo_actual->siguiente;
         nodo_actual->siguiente = nodo_nuevo;
-
-        if (posicion == lista->longitud) {
-            lista->nodo_final = nodo_nuevo;
-        }
     }
 
     lista->longitud++;
     return lista;
 }
-
 void *lista_quitar(lista_t *lista) 
 {
 	
