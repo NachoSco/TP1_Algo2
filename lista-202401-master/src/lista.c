@@ -43,13 +43,11 @@ lista_t *lista_crear(){
 	return lista;
 }
 
-
 lista_t *lista_insertar(lista_t *lista, void *elemento)
 {
     if (lista == NULL || elemento == NULL) {
-        return NULL; // La lista no existe, devuelve NULL
+        return NULL; // La lista no existe o el elemento es NULL, devuelve NULL
     }
-
 
     nodo_t *nodo_nuevo = crear_nodo(elemento);
 
@@ -57,12 +55,12 @@ lista_t *lista_insertar(lista_t *lista, void *elemento)
         return NULL; // Error al crear el nuevo nodo, devuelve NULL
     }
 
-    if (lista->longitud == 0) {
+    if (lista->nodo_inicio == NULL) {
         lista->nodo_inicio = nodo_nuevo;
         lista->nodo_final = nodo_nuevo;
     } else {
-    	lista->nodo_final->siguiente = nodo_nuevo;
-    	lista->nodo_final = nodo_nuevo;
+        lista->nodo_final->siguiente = nodo_nuevo;
+        lista->nodo_final = nodo_nuevo;
     }
 
     lista->longitud++;
