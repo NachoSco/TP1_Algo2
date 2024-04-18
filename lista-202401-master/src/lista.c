@@ -7,11 +7,11 @@ typedef struct nodo {
 	struct nodo *siguiente;
 } nodo_t;
 
-typedef struct lista {
+struct lista {
 	nodo_t *nodo_inicio;
 	size_t longitud;
 	nodo_t *nodo_final;
-} lista_t;
+};
 
 struct lista_iterador {
 	//y acá?
