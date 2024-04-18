@@ -83,30 +83,6 @@ lista_t *lista_insertar_en_posicion(lista_t *lista, void *elemento,
         return NULL; // Error al crear el nuevo nodo, devuelve NULL
     }
 
-    if (posicion == 0) {
-        nodo_nuevo->siguiente = lista->nodo_inicio;
-        lista->nodo_inicio = nodo_nuevo;
-        if (lista->longitud == 0) {
-            lista->nodo_final = nodo_nuevo; // Si la lista estaba vacía, el nuevo nodo también es el último
-        }
-    } else if (posicion == 1) {
-        nodo_nuevo->siguiente = lista->nodo_inicio->siguiente;
-        lista->nodo_inicio->siguiente = nodo_nuevo;
-        if (lista->longitud == 1) {
-            lista->nodo_final = nodo_nuevo; // Si la lista tenía solo un elemento, el nuevo nodo se convierte en el último
-        }
-    } else {
-        nodo_t *nodo_actual = lista->nodo_inicio;
-        size_t contador = 1;
-
-        while (contador < posicion) {
-            nodo_actual = nodo_actual->siguiente;
-            contador++;
-        }
-
-        nodo_nuevo->siguiente = nodo_actual->siguiente;
-        nodo_actual->siguiente = nodo_nuevo;
-    }
 
     lista->longitud++;
     return lista;
@@ -114,7 +90,29 @@ lista_t *lista_insertar_en_posicion(lista_t *lista, void *elemento,
 
 void *lista_quitar(lista_t *lista)
 {
-	return NULL;
+	if (lista == NULL) {
+    	return NULL; // La lista no existe o el elemento es NULL, devuelve NULL
+    }
+
+    nodo_t *actual = lista->nodo_inicio;
+    nodo_t *ultimo = NULL;
+    void *elemento_a_eliminar;
+
+    while(actual->siguiente->siguiente != NULL){
+    	actual = actual->siguiente;
+    }
+    ultimo = actual->siguiente;
+    elemento_a_eliminar = ultimo->elemento;
+
+    actual->siguiente = NULL;
+
+    free(ultimo->elemento);
+    free(ultimo);
+
+    lista->nodo_final = actual;
+    lista->longitud--;
+
+	return elemento_a_eliminar;
 }
 
 void *lista_quitar_de_posicion(lista_t *lista, size_t posicion)
