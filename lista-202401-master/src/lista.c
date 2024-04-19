@@ -141,7 +141,21 @@ void *lista_quitar_de_posicion(lista_t *lista, size_t posicion)
 
 void *lista_elemento_en_posicion(lista_t *lista, size_t posicion)
 {
-	return NULL;
+    if(lista == NULL || lista->longitud == 0 || posicion >= lista->longitud){
+        return NULL;
+    }
+    
+    void *elemento_buscado = NULL;
+    nodo_t *nodo_actual = lista->nodo_inicio;
+    size_t contador = 0;
+    
+    while(contador < posicion){
+        nodo_actual = nodo_actual->siguiente;
+        contador++;
+    }
+    elemento_buscado = nodo_actual->elemento;
+    
+	return elemento_buscado;
 }
 
 void *lista_buscar_elemento(lista_t *lista, int (*comparador)(void *, void *),
@@ -152,26 +166,40 @@ void *lista_buscar_elemento(lista_t *lista, int (*comparador)(void *, void *),
 
 void *lista_primero(lista_t *lista)
 {
-	return NULL;
+    if(lista == NULL ||lista->longitud == 0){
+        return NULL;
+    }
+    return lista->nodo_inicio;
 }
 
 void *lista_ultimo(lista_t *lista)
 {
-	return NULL;
+    if(lista == NULL ||lista->longitud == 0){
+        return NULL;
+    }
+	return lista->nodo_final;
 }
 
 bool lista_vacia(lista_t *lista)
 {
-	return true;
+    if(lista == NULL ||lista->longitud == 0){
+        return true;
+    }
+	return false;
 }
 
 size_t lista_tamanio(lista_t *lista)
 {
-	return 0;
+    if(lista == NULL){
+        return 0;
+    }
+    
+	return lista->longitud;
 }
 
 void lista_destruir(lista_t *lista)
 {
+    free(lista);
 }
 
 void lista_destruir_todo(lista_t *lista, void (*funcion)(void *))
