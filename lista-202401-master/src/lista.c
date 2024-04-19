@@ -45,7 +45,7 @@ lista_t *lista_crear()
 
 lista_t *lista_insertar(lista_t *lista, void *elemento)
 {
-	if (lista == NULL || elemento == NULL) {
+	if (lista == NULL) {
 		return NULL; // La lista no existe o el elemento es NULL, devuelve NULL
 	}
 
@@ -70,7 +70,7 @@ lista_t *lista_insertar(lista_t *lista, void *elemento)
 lista_t *lista_insertar_en_posicion(lista_t *lista, void *elemento,
                                     size_t posicion)
 {
-    if (lista == NULL || elemento == NULL) {
+    if (lista == NULL) {
         return NULL; // La lista no existe o el elemento es NULL, devuelve NULL
     }
 
@@ -82,23 +82,43 @@ lista_t *lista_insertar_en_posicion(lista_t *lista, void *elemento,
     if (nodo_nuevo == NULL) {
         return NULL; // Error al crear el nuevo nodo, devuelve NULL
     }
-
-
+    
+    if (posicion == 0){
+        nodo_nuevo->siguiente = lista->nodo_inicio;
+        lista->nodo_inicio = nodo_nuevo;
+    }
+    if (posicion == 1){
+        nodo_nuevo->siguiente = lista->nodo_inicio->siguiente;
+        lista->nodo_inicio->siguiente = nodo_nuevo;
+    }else{
+        int contador = 0;
+        nodo_t *actual = lista->nodo_inicio;
+    
+        while(contador < posicion - 1){
+            actual = actual->siguiente;
+            contador++;
+        }
+        nodo_nuevo->siguiente = actual->siguiente;
+        actual->siguiente = nodo_nuevo;
+    }
+    
     lista->longitud++;
     return lista;
 }
 
 void *lista_quitar(lista_t *lista)
 {
+	return NULL;
 	if (lista == NULL) {
     	return NULL; // La lista no existe o el elemento es NULL, devuelve NULL
     }
 
     nodo_t *actual = lista->nodo_inicio;
     nodo_t *ultimo = NULL;
-    void *elemento_a_eliminar;
-
-    while(actual->siguiente->siguiente != NULL){
+    void *elemento_a_eliminar; 
+    
+    size_t contador = 0;
+    while(contador < lista->longitud -1){
     	actual = actual->siguiente;
     }
     ultimo = actual->siguiente;
@@ -106,7 +126,6 @@ void *lista_quitar(lista_t *lista)
 
     actual->siguiente = NULL;
 
-    free(ultimo->elemento);
     free(ultimo);
 
     lista->nodo_final = actual;
