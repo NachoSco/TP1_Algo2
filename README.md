@@ -4,7 +4,7 @@
 
 # TDA LISTA
 
-## Alumno: (Nombre Apellido) - (Padrón) - (Mail)
+## Alumno: NICOLAS IGNACIO SCOPEL - 111305 - nscopel@fi.uba.ar
 
 - Para compilar:
 
@@ -25,37 +25,21 @@ línea con valgrind
 
 ---
 
-##  Funcionamiento
+## Funcionamiento General:
+El código implementa una lista enlazada genérica en C. Esta estructura de datos permite almacenar una secuencia de elementos de manera dinámica, es decir, su tamaño puede cambiar durante la ejecución del programa. La lista enlazada está compuesta por nodos, donde cada nodo contiene un elemento y un puntero al siguiente nodo en la secuencia.
 
-Explicación de cómo funcionan las estructuras desarrolladas en el TP y el funcionamiento general del mismo.
+## Proceso de Creación y Manipulación de la Lista:
+- **Creación de la Lista (lista_crear):** Esta función inicializa una lista vacía, asignando memoria para la estructura lista_t.
+- **Inserción de Elementos (lista_insertar, lista_insertar_en_posicion):** Permite añadir elementos a la lista. La función lista_insertar agrega un elemento al final de la lista, mientras que lista_insertar_en_posicion inserta un elemento en una posición específica.
+- **Eliminación de Elementos (lista_quitar, lista_quitar_de_posicion):** Elimina elementos de la lista. lista_quitar elimina el último elemento, mientras que lista_quitar_de_posicion elimina un elemento en una posición dada.
+- **Acceso a Elementos (lista_elemento_en_posicion, lista_primero, lista_ultimo):** Estas funciones permiten acceder a los elementos de la lista. lista_elemento_en_posicion devuelve el elemento en una posición dada, lista_primero devuelve el primer elemento, y lista_ultimo devuelve el último elemento.
+- **Búsqueda de Elementos (lista_buscar_elemento):** Permite buscar un elemento en la lista utilizando una función comparadora.
+- **Información de la Lista (lista_vacia, lista_tamanio):** Estas funciones proporcionan información sobre la lista, como si está vacía (lista_vacia) y su tamaño (lista_tamanio).
+- **Destrucción de la Lista (lista_destruir, lista_destruir_todo):** Libera la memoria utilizada por la lista y sus elementos. lista_destruir solo elimina la lista, mientras que lista_destruir_todo además permite aplicar una función a cada elemento antes de liberarlos.
 
-Aclarar en esta parte todas las decisiones que se tomaron al realizar el TP, cosas que no se aclaren en el enunciado, fragmentos de código que necesiten explicación extra, etc.
-
-Incluír **EN TODOS LOS TPS** los diagramas relevantes al problema (mayormente diagramas de memoria para explicar las estructuras, pero se pueden utilizar otros diagramas si es necesario).
-
-### Por ejemplo:
-
-El programa funciona abriendo el archivo pasado como parámetro y leyendolo línea por línea. Por cada línea crea un registro e intenta agregarlo al vector. La función de lectura intenta leer todo el archivo o hasta encontrar el primer error. Devuelve un vector con todos los registros creados.
-
-<div align="center">
-<img width="70%" src="img/diagrama1.svg">
-</div>
-
-En el archivo `sarasa.c` la función `funcion1` utiliza `realloc` para agrandar la zona de memoria utilizada para conquistar el mundo. El resultado de `realloc` lo guardo en una variable auxiliar para no perder el puntero original en caso de error:
-
-```c
-int *vector = realloc(vector_original, (n+1)*sizeof(int));
-
-if(vector == NULL)
-    return -1;
-vector_original = vector;
-```
-
-
-<div align="center">
-<img width="70%" src="img/diagrama2.svg">
-</div>
-
+## Iteración sobre la Lista:
+El código también proporciona funciones para iterar sobre los elementos de la lista mediante un iterador.
+- **Iterador (lista_iterador_crear, lista_iterador_tiene_siguiente, lista_iterador_avanzar, lista_iterador_elemento_actual, lista_iterador_destruir):** Estas funciones permiten crear un iterador sobre la lista, verificar si tiene un siguiente elemento, avanzar al siguiente elemento, obtener el elemento actual y destruir el iterador.
 ---
 
 ## Respuestas a las preguntas teóricas
