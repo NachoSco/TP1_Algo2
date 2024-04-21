@@ -9,18 +9,18 @@
 - Para compilar:
 
 ```bash
-línea de compilación
+gcc -std=c99 -Wall -Wconversion -Wtype-limits -pedantic -Werror -O2 -g src/*.c lista.c -o lista.c -I./include
 ```
 
 - Para ejecutar:
 
 ```bash
-línea de ejecución
+./lista.c
 ```
 
 - Para ejecutar con valgrind:
 ```bash
-línea con valgrind
+valgrind --leak-check=full ./lista.c
 ```
 
 ---
