@@ -197,4 +197,13 @@ Lista es una estructura de datos que organiza elementos en una secuencia, donde 
     <p align="center">
     <img width="450px" src="imagenes/LIST_CIR.PNG">
     </p>
+    
+### Dificultad Computacional de Push y Pop en una Lista Enlazada
 
+#### Push:
+La operación de `push` en una lista enlazada es O(1) porque implica agregar un elemento al final de la lista. Esto se logra creando un nuevo nodo y actualizando el puntero del nodo final para que apunte al nuevo nodo. Dado que no se necesita recorrer la lista para encontrar el último nodo, esta operación es independiente del tamaño de la lista y tiene una complejidad de tiempo constante.
+
+#### Pop:
+Similarmente, la operación de `pop` en una lista enlazada es O(1) debido a que implica eliminar el último elemento de la lista. Al eliminar el último nodo, simplemente se actualiza el puntero del nodo final para que apunte al penúltimo nodo. Esta operación también es independiente del tamaño de la lista, ya que no requiere recorrer la lista y tiene una complejidad de tiempo constante.
+
+En resumen, tanto `push` como `pop` en una lista enlazada son operaciones eficientes que pueden ejecutarse en tiempo constante O(1), lo que las hace adecuadas para su uso en situaciones donde se requiere un acceso rápido al final de la lista.
